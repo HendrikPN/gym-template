@@ -8,9 +8,11 @@ class FooEnv(gym.Env):
   def __init__(self):
     """
     Every environment should at least contain the variables observation_space and action_space 
-    specifying the type of possible observations and actions using spaces.Box or spaces.Discrete.
+    specifying the type of possible observations and actions using spaces.Box or spaces.Discrete
+    as exemplified in the following.
 
     Example:
+
     >>> EnvTest = FooEnv()
     >>> EnvTest.observation_space=spaces.Box(low=-1, high=1, shape=3)
     >>> EnvTest.action_space=spaces.Discrete(2)

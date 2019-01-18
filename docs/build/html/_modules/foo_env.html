@@ -1,0 +1,122 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>foo_env &#8212; gym-template  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for foo_env</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">gym</span>
+<span class="kn">from</span> <span class="nn">gym</span> <span class="k">import</span> <span class="n">error</span><span class="p">,</span> <span class="n">spaces</span><span class="p">,</span> <span class="n">utils</span>
+<span class="kn">from</span> <span class="nn">gym.utils</span> <span class="k">import</span> <span class="n">seeding</span>
+
+<div class="viewcode-block" id="FooEnv"><a class="viewcode-back" href="../index.html#foo_env.FooEnv">[docs]</a><span class="k">class</span> <span class="nc">FooEnv</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">Env</span><span class="p">):</span>
+  <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;render.modes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;human&#39;</span><span class="p">]}</span>
+
+<div class="viewcode-block" id="FooEnv.__init__"><a class="viewcode-back" href="../index.html#foo_env.FooEnv.__init__">[docs]</a>  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Every environment should at least contain the variables observation_space and action_space </span>
+<span class="sd">    specifying the type of possible observations and actions using spaces.Box or spaces.Discrete</span>
+<span class="sd">    as exemplified in the following.</span>
+
+<span class="sd">    Example:</span>
+
+<span class="sd">    &gt;&gt;&gt; EnvTest = FooEnv()</span>
+<span class="sd">    &gt;&gt;&gt; EnvTest.observation_space=spaces.Box(low=-1, high=1, shape=3)</span>
+<span class="sd">    &gt;&gt;&gt; EnvTest.action_space=spaces.Discrete(2)</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+<div class="viewcode-block" id="FooEnv.step"><a class="viewcode-back" href="../index.html#foo_env.FooEnv.step">[docs]</a>  <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This method is the primary interface between environment and agent.</span>
+
+<span class="sd">    Paramters: </span>
+<span class="sd">        action: int</span>
+<span class="sd">                the index of the respective action (if action space is discrete)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        output: (array, float, bool)</span>
+<span class="sd">                information provided by the environment about its current state:</span>
+<span class="sd">                (observation, reward, done)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="FooEnv.reset"><a class="viewcode-back" href="../index.html#foo_env.FooEnv.reset">[docs]</a>  <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This method resets the environment to its initial values.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        observation:    array</span>
+<span class="sd">                        the initial state of the environment</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="FooEnv.render"><a class="viewcode-back" href="../index.html#foo_env.FooEnv.render">[docs]</a>  <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;human&#39;</span><span class="p">,</span> <span class="n">close</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This methods provides the option to render the environment&#39;s behavior to a window </span>
+<span class="sd">    which should be readable to the human eye if mode is set to &#39;human&#39;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">gym-template</a></h1>
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, HendrikPN.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
