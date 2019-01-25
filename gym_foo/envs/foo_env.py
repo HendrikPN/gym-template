@@ -1,8 +1,8 @@
-import gym
-from gym import error, spaces, utils
-from gym.utils import seeding
+import scigym
+from scigym import error, spaces, utils
+from scigym.utils import seeding
 
-class FooEnv(gym.Env):
+class FooEnv(scigym.Env):
   metadata = {'render.modes': ['human']}
 
   def __init__(self):
