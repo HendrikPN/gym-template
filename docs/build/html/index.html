@@ -46,9 +46,8 @@
 <dd><dl class="method">
 <dt id="foo_env.FooEnv.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/foo_env.html#FooEnv.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#foo_env.FooEnv.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>Every environment should at least contain the variables observation_space and action_space 
-specifying the type of possible observations and actions using spaces.Box or spaces.Discrete
-as exemplified in the following.</p>
+<dd><p>Every environment should be derived from scigym.Env and at least contain the variables observation_space and action_space 
+specifying the type of possible observations and actions using spaces.Box or spaces.Discrete.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">EnvTest</span> <span class="o">=</span> <span class="n">FooEnv</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">EnvTest</span><span class="o">.</span><span class="n">observation_space</span><span class="o">=</span><span class="n">spaces</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">low</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
