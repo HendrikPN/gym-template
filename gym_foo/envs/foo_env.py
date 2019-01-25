@@ -7,7 +7,7 @@ class FooEnv(scigym.Env):
 
   def __init__(self):
     """
-    Every environment should at least contain the variables observation_space and action_space 
+    Every environment should be derived from scigym.Env and at least contain the variables observation_space and action_space 
     specifying the type of possible observations and actions using spaces.Box or spaces.Discrete.
 
     Example:
