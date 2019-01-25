@@ -12,7 +12,7 @@ class FooEnv(scigym.Env):
 
     Example:
     >>> EnvTest = FooEnv()
-    >>> EnvTest.observation_space=spaces.Box(low=-1, high=1, shape=3)
+    >>> EnvTest.observation_space=spaces.Box(low=-1, high=1, shape=(3,4))
     >>> EnvTest.action_space=spaces.Discrete(2)
     """
 
