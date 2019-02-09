@@ -1,13 +1,13 @@
-import scigym
-from scigym import error, spaces, utils
-from scigym.utils import seeding
+import gym
+from gym import error, spaces, utils
+from gym.utils import seeding
 
-class FooEnv(scigym.Env):
+class FooEnv(gym.Env):
   metadata = {'render.modes': ['human']}
 
   def __init__(self):
     """
-    Every environment should be derived from scigym.Env and at least contain the variables observation_space and action_space 
+    Every environment should be derived from gym.Env and at least contain the variables observation_space and action_space 
     specifying the type of possible observations and actions using spaces.Box or spaces.Discrete.
 
     Example:
