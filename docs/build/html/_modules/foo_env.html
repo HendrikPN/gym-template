@@ -33,16 +33,16 @@
           <div class="body" role="main">
             
   <h1>Source code for foo_env</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">scigym</span>
-<span class="kn">from</span> <span class="nn">scigym</span> <span class="k">import</span> <span class="n">error</span><span class="p">,</span> <span class="n">spaces</span><span class="p">,</span> <span class="n">utils</span>
-<span class="kn">from</span> <span class="nn">scigym.utils</span> <span class="k">import</span> <span class="n">seeding</span>
+<span></span><span class="kn">import</span> <span class="nn">gym</span>
+<span class="kn">from</span> <span class="nn">gym</span> <span class="k">import</span> <span class="n">error</span><span class="p">,</span> <span class="n">spaces</span><span class="p">,</span> <span class="n">utils</span>
+<span class="kn">from</span> <span class="nn">gym.utils</span> <span class="k">import</span> <span class="n">seeding</span>
 
-<div class="viewcode-block" id="FooEnv"><a class="viewcode-back" href="../index.html#foo_env.FooEnv">[docs]</a><span class="k">class</span> <span class="nc">FooEnv</span><span class="p">(</span><span class="n">scigym</span><span class="o">.</span><span class="n">Env</span><span class="p">):</span>
+<div class="viewcode-block" id="FooEnv"><a class="viewcode-back" href="../index.html#foo_env.FooEnv">[docs]</a><span class="k">class</span> <span class="nc">FooEnv</span><span class="p">(</span><span class="n">gym</span><span class="o">.</span><span class="n">Env</span><span class="p">):</span>
   <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;render.modes&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;human&#39;</span><span class="p">]}</span>
 
 <div class="viewcode-block" id="FooEnv.__init__"><a class="viewcode-back" href="../index.html#foo_env.FooEnv.__init__">[docs]</a>  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Every environment should be derived from scigym.Env and at least contain the variables observation_space and action_space </span>
+<span class="sd">    Every environment should be derived from gym.Env and at least contain the variables observation_space and action_space </span>
 <span class="sd">    specifying the type of possible observations and actions using spaces.Box or spaces.Discrete.</span>
 
 <span class="sd">    Example:</span>
