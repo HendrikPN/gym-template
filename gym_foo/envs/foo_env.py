@@ -48,3 +48,9 @@ class FooEnv(gym.Env):
     which should be readable to the human eye if mode is set to 'human'.
     """
     pass
+
+  def close(self):
+    """
+    This method provides the user with the option to perform any necessary cleanup.
+    """
+    pass
